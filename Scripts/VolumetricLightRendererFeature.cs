@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-namespace JARcraft.Game.Rendering
+namespace Billiam.Game.Rendering
 {
     public class VolumetricLightRendererFeature : ScriptableRendererFeature
     {
@@ -12,9 +12,10 @@ namespace JARcraft.Game.Rendering
             Composit
         }
 
-        [SerializeField] RenderStage debugRenderStage = RenderStage.Composit;
+        [SerializeField]
+        private RenderStage debugRenderStage = RenderStage.Composit;
 
-        VolumetricLightRenderPass pass;
+        private VolumetricLightRenderPass pass;
 
         public override void Create()
         {

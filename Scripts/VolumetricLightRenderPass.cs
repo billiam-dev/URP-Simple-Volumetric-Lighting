@@ -2,21 +2,21 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-namespace JARcraft.Game.Rendering
+namespace Billiam.Game.Rendering
 {
     public class VolumetricLightRenderPass : ScriptableRenderPass
     {
-        const string profilerTag = "Volumetric Light Post Process";
+        private const string profilerTag = "Volumetric Light Post Process";
 
-        VolumetricLightSettings settings;
-        VolumetricLightRendererFeature.RenderStage renderStage;
+        private VolumetricLightSettings settings;
+        private VolumetricLightRendererFeature.RenderStage renderStage;
 
-        RTHandle colorBuffer;
-        RTHandle temporaryBuffer1;
-        RTHandle temporaryBuffer2;
-        RTHandle temporaryBuffer3;
+        private RTHandle colorBuffer;
+        private RTHandle temporaryBuffer1;
+        private RTHandle temporaryBuffer2;
+        private RTHandle temporaryBuffer3;
 
-        Material material;
+        private Material material;
 
         public VolumetricLightRenderPass()
         {
@@ -76,7 +76,7 @@ namespace JARcraft.Game.Rendering
             CommandBufferPool.Release(cmd);
         }
 
-        void DoBlits(CommandBuffer cmd)
+        private void DoBlits(CommandBuffer cmd)
         {
             cmd.Blit(colorBuffer, temporaryBuffer1, material, 0); // Raymarch
 
@@ -124,7 +124,7 @@ namespace JARcraft.Game.Rendering
             CoreUtils.Destroy(material);
         }
 
-        bool ShouldRender()
+        private bool ShouldRender()
         {
             return settings.active && settings.intensity.value > 0;
         }

@@ -7,9 +7,10 @@ public class SceneMainLight : MonoBehaviour
      * Your main light should be the most intense directional light in the scene.
      * This script can be used to update global properties such as the light direction, which can be used by various shader effects.
     */
-    public Light mainLight;
+    [SerializeField]
+    private Light mainLight;
 
-    void Update()
+    private void Update()
     {
         if (mainLight)
         {

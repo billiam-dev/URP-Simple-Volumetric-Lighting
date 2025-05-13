@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-namespace JARcraft.Game.Rendering
+namespace Billiam.Game.Rendering
 {
     [System.Serializable, VolumeComponentMenu("Post-processing/Volumetric Light")]
     public class VolumetricLightSettings : VolumeComponent, IPostProcessComponent
